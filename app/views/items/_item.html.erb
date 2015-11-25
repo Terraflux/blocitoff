@@ -1,8 +1,11 @@
-<div class="media">
-	<div class="media-body">
-		<small>
-			<%= item.user.email %> created <%= time_ago_in_words(item.created_at) %> ago
-		</small>
-		<p><%= item.name %></p>
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+	<div class="media">
+		<div class="media-body">
+			<small>
+				<%= item.user.email %> created <%= time_ago_in_words(item.created_at) %> ago
+			</small>
+			<p><%= item.name %></p>
+			<%= link_to "Complete", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+		</div>
 	</div>
-</div>
+<% end %>
