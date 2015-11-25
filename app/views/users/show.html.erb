@@ -12,6 +12,11 @@
 					last sign in <%= time_ago_in_words(@user.last_sign_in_at) %> ago
 				</small>
 			</div>
+			<div>
+				<%= render @user.items %>
+			</div>
+			<div>
+				<%= render 'items/form', item: Item.new, user: @user %>
 		</div>
 	</div>
 </div>
