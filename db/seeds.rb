@@ -13,10 +13,11 @@ User.create!(
 users = User.all
 
 50.times do
-	Item.create!(
+	item = Item.create!(
 		name: Faker::Lorem.sentence,
 		user: users.sample
 	)
+	item.update_attribute(:created_at, rand(10.minutes .. 7.days).ago)
 end
 
 puts "Seed finished"

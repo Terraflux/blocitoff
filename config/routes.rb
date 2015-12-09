@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
-  #get 'items/create'
-
-
-  resources :users do
-    resources :items #, only: [:create, :delete]
+  resources :users, only: [] do
+    resources :items, only: [:create, :destroy]
   end
 
   devise_for :users

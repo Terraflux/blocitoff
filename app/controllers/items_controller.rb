@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
   		format.html
   		format.js
   	end
-
   end
 
   def destroy
